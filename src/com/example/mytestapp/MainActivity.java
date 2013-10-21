@@ -61,7 +61,8 @@ public class MainActivity extends Activity {
 	{
 		if (requestCode == REQUEST_CODE)
 		{
-			if (resultCode == RESULT_OK)
+			if (resultCode == RESULT_OK ||
+				resultCode == RESULT_CANCELED)
 			{
 				Bundle bundle = data.getExtras();
 				if (bundle != null)

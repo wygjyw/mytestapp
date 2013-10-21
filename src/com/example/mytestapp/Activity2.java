@@ -39,6 +39,12 @@ public class Activity2 extends Activity {
 			public void onClick(View v)
 			{
 				setTitle("click on 21");
+				Bundle bundle = new Bundle();
+				bundle.putString("result", "press on button 2");
+				Intent intent = new Intent();
+				intent.putExtras(bundle);
+				setResult(RESULT_CANCELED, intent);
+				finish();
 			}
 		};
 		
