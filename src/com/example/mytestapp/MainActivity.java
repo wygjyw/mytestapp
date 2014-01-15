@@ -12,9 +12,11 @@ public class MainActivity extends Activity {
 
 	Button button1;
 	Button button2;
+	Button dlgDemoButton;
 	
 	OnClickListener onClickListener1;
 	OnClickListener onClickListener2;
+	OnClickListener onDlgDemoClickListener;
 	
 	static final int REQUEST_CODE = 1;
 	@Override
@@ -41,11 +43,23 @@ public class MainActivity extends Activity {
 				startActivityForResult(intent2, REQUEST_CODE);
 			}
 		};
+		onDlgDemoClickListener = new OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				setTitle("click on Dlg Demo button");
+				Intent intent = new Intent(MainActivity.this, DlgActivity.class);
+				intent.putExtra("mykey", "From Main Page");
+				startActivityForResult(intent, REQUEST_CODE);
+			}
+		};
 		
 		button1 = (Button)findViewById(R.id.button1);
 		button2 = (Button)findViewById(R.id.button2);
+		dlgDemoButton = (Button)findViewById(R.id.button7);
 		button1.setOnClickListener(onClickListener1);
 		button2.setOnClickListener(onClickListener2);
+		dlgDemoButton.setOnClickListener(onDlgDemoClickListener);
 		
 	}
 
